@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Alam Asri</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@300;400&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+  .footer-gallery {
+    background: url('img/view1.jpeg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+    color: #ccc;
+  }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #1a1a1a;
+      color: #f1f1f1;
+    }
+    header {
+      background: url('bg-home.jpg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+    header p {
+      font-size: 1.25rem;
+      max-width: 800px;
+    }
+    nav {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    .gallery {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+    }
+    .gallery img {
+      flex-shrink: 0;
+      width: 100vw;
+      height: 80vh;
+      object-fit: cover;
+      scroll-snap-align: start;
+      margin-right: 10px;
+    }
+    .card-slider {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+    }
+    .card {
+      background: #2b2b2b;
+      border-radius: 12px;
+      padding: 20px;
+      width: 300px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 0.95rem;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .card-detail {
+      padding: 20px;
+      background-color: #2b2b2b;
+      color: #f1f1f1;
+      border-radius: 12px;
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 800px;
+      z-index: 1000;
+      overflow-y: auto;
+    }
+    .card-detail h3 {
+      font-size: 2rem;
+    }
+    .card-detail img {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .close-btn {
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: red;
+      margin-top: 10px;
+      display: block;
+      text-align: center;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hotel Alam Asri</h1>
+    <p>Penginapan eksklusif bernuansa alam di kaki pegunungan. Suasana tenang, layanan hangat, dan pemandangan yang menenangkan hati dan pikiran.</p>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('kamar')">Kamar</a>
+    <a href="#" onclick="showSection('event')">Meeting/Event</a>
+    <a href="#" onclick="showSection('fasilitas')">Fasilitas</a>
+    <a href="#" onclick="showSection('restoran')">Restoran</a>
+    <a href="#" onclick="showSection('kontak')">Tentang Kami</a>
+  </nav>
+
+  <section id="home" class="active">
+    <h2 class="section-title">Galeri View Hotel</h2>
+    <div class="gallery">
+      <img src="img/view5.jpeg" alt="View 1">
+      <img src="img/view4.jpeg" alt="View 2">
+      <img src="img/view2.jpeg" alt="View 3">
+      <img src="img/view1.jpeg" alt="View 4">
+      <img src="img/view3.jpeg" alt="View 5">
+    </div>
+  </section>
+
+<div class="footer-gallery">
+  <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem;">Terinspirasi oleh Alam</h2>
+  <p style="max-width: 600px; margin: auto;">Nikmati harmoni alam dan kenyamanan modern di Hotel Alam Asri. 
+  "In the heart of nature, we offer more than a stay — we create memories."</p>
+</div>
+
+  <section id="kamar">
+    <h2 class="section-title">Tipe Kamar</h2>
+    <div class="card-slider">
+      <div class="card" onclick="showDetail('deluxe')">
+        <img src="img/kamar1.jpeg" alt="Kamar Deluxe">
+        <h3>Deluxe Room</h3>
+        <p>Kamar luas dengan pemandangan pegunungan, tempat tidur king, dan balkon pribadi.</p>
+      </div>
+      <div class="card" onclick="showDetail('suite')">
+        <img src="img/kamar2.jpeg"Suite Room">
+        <h3>Suite Room</h3>
+        <p>Dilengkapi ruang tamu, bathtub elegan, dan panorama taman alami.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="event">
+    <h2 class="section-title">Meeting & Event</h2>
+    <div class="card-slider">
+      <div class="card" onclick="showDetail('ballroom')">
+        <img src="img/ballroom1.jpeg" alt="Ballroom">
+        <h3>Ballroom</h3>
+        <p>Luas dan modern untuk pertemuan, pernikahan, dan event lainnya.</p>
+      </div>
+      <div class="card" onclick="showDetail('outdoor')">
+        <img src="img/outdoor.jpeg" alt="Outdoor">
+        <h3>Taman Acara Outdoor</h3>
+        <p>Area terbuka hijau untuk pesta kebun dan gathering perusahaan.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="fasilitas">
+    <h2 class="section-title">Fasilitas</h2>
+    <div class="card-slider">
+      <div class="card" onclick="showDetail('kolam')">
+        <img src="img/pool.jpeg" alt="Kolam Renang">
+        <h3>Kolam Renang Outdoor</h3>
+        <p>Kolam renang kami menggunakan air segar dari pegunungan, memberikan sensasi sejuk dan alami. Dikelilingi pemandangan hijau, cocok untuk berenang atau bersantai menikmati suasana.
+
+</p>
+      </div>
+      <div class="card" onclick="showDetail('spa')">
+        <img src="img/spa.jpeg" alt="Spa">
+        <h3>Spa</h3>
+        <p>Nikmati layanan spa dengan aroma terapi dan pijatan yang menenangkan. Cocok untuk melepas lelah dan memulihkan energi setelah beraktivitas.</p>
+      </div>
+      <div class="card" onclick="showDetail('spa')">
+        <img src="img/gym.jpeg" alt="Spa dan Gym">
+        <h3>Gym</h3>
+        <p>Fasilitas gym tersedia untuk kamu yang ingin tetap aktif. Dilengkapi alat lengkap dan suasana tenang dengan pemandangan taman.
+
+</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="restoran">
+    <div class="card" onclick="showDetail('restoran')">
+        <img src="img/restoran.jpeg" alt="Restoran">
+        <h3>Restoran "Rasa Alam"</h3>
+        <p>Menyajikan hidangan lokal dan internasional dengan latar taman hijau dan suara gemericik air alami.</p>
+      </div>      
+  </section>
+
+  <section id="kontak">
+  <h2 class="section-title">Tentang Kami</h2>
+  <p style="text-align: center; max-width: 800px; margin: auto; margin-bottom: 40px;">
+    Hotel Alam Asri adalah destinasi akomodasi eksklusif yang menyatu dengan keindahan alam di kawasan pegunungan Puncak Asri. Dengan suasana yang tenang dan udara yang sejuk, hotel ini dirancang untuk menjadi tempat pelarian sempurna dari hiruk pikuk kota. Setiap sudut hotel mencerminkan harmoni antara kenyamanan modern dan sentuhan alami, menciptakan pengalaman menginap yang tak terlupakan bagi setiap tamu.
+    <br><br>
+    Kami menawarkan berbagai tipe kamar dengan desain elegan dan pemandangan memukau, fasilitas lengkap seperti kolam renang outdoor dengan air pegunungan, pusat kebugaran, spa untuk relaksasi, restoran dengan menu lokal & internasional, serta ruang pertemuan dan taman luas untuk berbagai acara.
+    <br><br>
+    Dengan staf profesional yang ramah dan berpengalaman, Hotel Alam Asri berkomitmen untuk memberikan pelayanan terbaik yang hangat dan personal bagi seluruh tamu, baik untuk keperluan liburan keluarga, perjalanan romantis, maupun kegiatan bisnis.
+  </p>
+
+  <div style="max-width: 800px; margin: auto; line-height: 1.8; font-size: 1rem;">
+    <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 10px;">Lokasi</h3>
+    <p>
+      <strong>Alamat:</strong> Jl. Sejuk Damai No.10, Puncak Asri, Indonesia<br>
+      <strong>Telp:</strong> (021) 123-4567<br>
+      <strong>Email:</strong> info@alamasrihotel.com<br>
+      <strong>Instagram:</strong> <a href="https://instagram.com/alamasrihotel" target="_blank" style="color: #f1f1f1;">@alamasrihotel</a>
+    </p>
+    
+    <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-top: 30px; margin-bottom: 10px;">Profil Manajemen</h3>
+    <p>
+      <strong>Nama:</strong> Budi Santosa<br>
+      <strong>Jabatan:</strong> General Manager<br>
+      <strong>Pengalaman:</strong> Lebih dari 15 tahun di industri perhotelan, Budi Santosa telah memimpin berbagai tim dalam menciptakan pengalaman menginap yang berkelas dan ramah. Keahliannya dalam memadukan layanan profesional dengan pendekatan alami menjadikan Hotel Alam Asri sebagai pilihan utama untuk penginapan bernuansa alam.
+    </p>
+
+    <blockquote style="font-style: italic; color: #ccc; margin-top: 40px; text-align: center;">
+      “In the heart of nature, we offer more than a stay — we create memories.”<br>
+      <span style="font-size: 0.9rem;">– Hotel Alam Asri</span>
+    </blockquote>
+  </div>
+</section>
+
+
+    <div class="overlay" id="overlay" onclick="closeDetail()"></div>
+    <div id="detail-modal" class="card-detail">
+      <span class="close-btn" onclick="closeDetail()">X</span>
+      <div id="detail-content"></div>
+    </div>
+  
+    <script>
+      function showSection(id) {
+        document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+      }
+  
+      function showDetail(type) {
+        let content = "";
+        if (type === 'deluxe') {
+          content = `<h3>Deluxe Room</h3>
+                    <img src="kamar1.jpg" alt="Deluxe Room">
+                    <p>Kamar luas dengan pemandangan pegunungan, tempat tidur king, dan balkon pribadi. Menawarkan kenyamanan dan kemewahan dengan fasilitas premium.</p>`;
+        } else if (type === 'suite') {
+          content = `<h3>Suite Room</h3>
+                    <img src="kamar2.jpg" alt="Suite Room">
+                    <p>Dilengkapi ruang tamu, bathtub elegan, dan panorama taman alami. Menyediakan kenyamanan untuk liburan panjang atau perjalanan bisnis.</p>`;
+        } else if (type === 'ballroom') {
+          content = `<h3>Ballroom</h3>
+                    <img src="ballroom.jpg" alt="Ballroom">
+                    <p>Luas dan modern untuk pertemuan, pernikahan, dan event lainnya. Menyediakan fasilitas lengkap untuk setiap acara Anda.</p>`;
+        } else if (type === 'outdoor') {
+          content = `<h3>Taman Acara Outdoor</h3>
+                    <img src="outdoor.jpg" alt="Taman Acara Outdoor">
+                    <p>Area terbuka hijau untuk pesta kebun dan gathering perusahaan. Suasana alam yang menenangkan untuk acara luar ruangan.</p>`;
+        } else if (type === 'kolam') {
+          content = `<h3>Kolam Renang Outdoor</h3>
+                    <img src="kolam.jpg" alt="Kolam Renang">
+                    <p>Kolam renang dengan air pegunungan yang segar, dikelilingi pemandangan alami yang menawan. Cocok untuk relaksasi.</p>`;
+        } else if (type === 'spa') {
+          content = `<h3>Spa & Gym</h3>
+                    <img src="spa.jpg" alt="Spa dan Gym">
+                    <p>Spa dan gym untuk relaksasi total dan kebugaran tubuh setelah seharian beraktivitas. Nikmati layanan spa profesional di tengah nuansa tropis.</p>`;
+        }
+  
+        document.getElementById('detail-content').innerHTML = content;
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('detail-modal').style.display = 'block';
+      }
+  
+      function closeDetail() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('detail-modal').style.display = 'none';
+      }
+    </script>
+  </body>
+  <body>
+<footer>
+  © 2025 Hotel Alam Asri | Paramitha
+</footer>
+  </body>
+  </html>
+  
